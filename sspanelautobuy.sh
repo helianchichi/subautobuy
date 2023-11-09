@@ -9,7 +9,7 @@ loginstr=$(curl -k -s -L -e  '; auto' -d "email=$email&passwd=$passwd&code=" -c 
 echo -en $loginstr
 echo -e "\n"
 
-while(( $int<=5 ))
+while(( $int<=60 ))
 do
     let "int++"
     retstr=$(curl -k -s -d "" -b /tmp/checkin.cook "https://$domain/user/buy" --data-raw 'coupon=&shop=1&autorenew=1&disableothers=1')
