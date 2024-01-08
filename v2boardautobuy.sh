@@ -1,10 +1,10 @@
 #!/bin/bash
 int=0
-domain=
+domain=$1
 email=
 passwd=
-planid=
-coupon=
+planid=$2
+coupon=$3
 
 authcode=$(curl -s "https://$domain/api/v1/passport/auth/login" --data-raw "email=$email&password=$passwd" --compressed| python3 -c "import sys, json; restr=json.load(sys.stdin); print(restr['data']['auth_data'])") 
 
